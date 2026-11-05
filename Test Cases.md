@@ -40,3 +40,4 @@ This document defines the functional test cases for the **Online Course Manageme
 - **Blocked:** 0
 - **Execution Date:** Laboratory Session 12
 - **Testing Approach:** Black-Box Functional Testing, Equivalence Partitioning, and Boundary Value Analysis
+

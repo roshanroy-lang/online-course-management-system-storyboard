@@ -64,3 +64,4 @@ cd online-course-management-system-storyboard
 # 2. Open client interface
 open application/index.html   # or launch live server
 ```
+

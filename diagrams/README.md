@@ -160,3 +160,4 @@ sequenceDiagram
   CourseService-->>UI: HTTP 201 Created (Enrollment OK)
   UI-->>Student: Display "Enrolled Successfully" & redirect to curriculum
 ```
+

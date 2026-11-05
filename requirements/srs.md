@@ -91,3 +91,4 @@ OCMS operates as an independent web application backed by a relational database 
 - **NFR-2 (Security):** Passwords shall never be stored in plaintext. Sensitive API routes must require authorization bearer tokens.
 - **NFR-3 (Availability):** System architecture shall target 99.5% operational uptime during laboratory demonstration windows.
 - **NFR-4 (Usability):** User interfaces shall adhere to WCAG 2.1 Level AA accessibility guidelines, including responsive layout across mobile and desktop viewports.
+
