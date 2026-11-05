@@ -1,12 +1,12 @@
-| Test Case ID | Module               | Test Scenario                | Test Input                      | Expected Result                        |
-| ------------ | -------------------- | ---------------------------- | ------------------------------- | -------------------------------------- |
-| TC01         | Login                | Login with valid credentials | Valid username and password     | User should log in successfully        |
-| TC02         | Login                | Login with invalid password  | Valid username + wrong password | Error message should be displayed      |
-| TC03         | Student Registration | Register a new student       | Valid student details           | Student should be registered           |
-| TC04         | Student Registration | Submit empty required fields | Empty fields                    | Validation message should be displayed |
-| TC05         | Course Enrollment    | Enroll in an available course| Valid student + available course| Course should be enrolled successfully |
-| TC06         | Course Enrollment    | Enroll in a full/closed course| Full/closed course             | System should prevent enrollment       |
-| TC07         | Course Creation      | Add a new course module      | Valid course title and syllabus | Course module should be created        |
-| TC08         | Assignment Submission| Submit course assignment     | Valid assignment file attachment| Assignment submission should be recorded|
-| TC09         | Quiz Assessment      | Submit a course quiz         | Valid quiz answers              | Quiz score should be calculated        |
-| TC10         | Logout               | Logout from the system       | Click Logout                    | User should be logged out              |
+| Test Case ID | Module               | Test Scenario                | Test Steps                                                                 | Test Input                      | Expected Result                        |
+| ------------ | -------------------- | ---------------------------- | -------------------------------------------------------------------------- | ------------------------------- | -------------------------------------- |
+| TC01         | Login                | Login with valid credentials | 1. Open login page<br>2. Enter registered credentials<br>3. Click 'Login'  | Valid username and password     | User should log in successfully        |
+| TC02         | Login                | Login with invalid password  | 1. Open login page<br>2. Enter valid username and wrong password<br>3. Click 'Login' | Valid username + wrong password | Error message should be displayed      |
+| TC03         | Student Registration | Register a new student       | 1. Open registration page<br>2. Fill required student details<br>3. Click 'Submit' | Valid student details           | Student should be registered           |
+| TC04         | Student Registration | Submit empty required fields | 1. Open registration page<br>2. Leave required fields blank<br>3. Click 'Submit' | Empty fields                    | Validation message should be displayed |
+| TC05         | Course Enrollment    | Enroll in an available course| 1. Browse course catalog<br>2. Select active course<br>3. Click 'Enroll Now' | Valid student + available course| Course should be enrolled successfully |
+| TC06         | Course Enrollment    | Enroll in a full/closed course| 1. Navigate to full/closed course<br>2. Attempt to enroll                  | Full/closed course             | System should prevent enrollment       |
+| TC07         | Course Creation      | Add a new course module      | 1. Login as instructor<br>2. Enter title and syllabus<br>3. Click 'Save Module' | Valid course title and syllabus | Course module should be created        |
+| TC08         | Assignment Submission| Submit course assignment     | 1. Open assignment portal<br>2. Attach document file<br>3. Click 'Submit'  | Valid assignment file attachment| Assignment submission should be recorded|
+| TC09         | Quiz Assessment      | Submit a course quiz         | 1. Start quiz session<br>2. Select answer options<br>3. Click 'Submit Quiz'| Valid quiz answers              | Quiz score should be calculated        |
+| TC10         | Logout               | Logout from the system       | 1. Open user profile menu<br>2. Click 'Logout'                             | Click Logout                    | User should be logged out              |
