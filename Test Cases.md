@@ -1,4 +1,4 @@
-| Test Case ID | Module               | Test Scenario                | Test Steps                                                                 | Test Input                      | Expected Result                        |
+| Test Case ID | Module               | Test Scenario                | Test Steps                                                                 | Test Data                       | Expected Result                        |
 | ------------ | -------------------- | ---------------------------- | -------------------------------------------------------------------------- | ------------------------------- | -------------------------------------- |
 | TC01         | Login                | Login with valid credentials | 1. Open login page<br>2. Enter registered credentials<br>3. Click 'Login'  | Valid username and password     | User should log in successfully        |
 | TC02         | Login                | Login with invalid password  | 1. Open login page<br>2. Enter valid username and wrong password<br>3. Click 'Login' | Valid username + wrong password | Error message should be displayed      |
