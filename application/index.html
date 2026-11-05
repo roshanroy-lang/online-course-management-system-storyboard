@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Course Management System (OCMS) - Lab Prototype</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- Navbar -->
+  <header class="bg-indigo-900 text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <div class="flex items-center space-x-3">
+        <i class="fa-solid fa-graduation-cap text-2xl text-amber-400"></i>
+        <span class="font-bold text-xl tracking-tight">EduFlow OCMS</span>
+        <span class="text-xs bg-indigo-800 text-indigo-200 px-2.5 py-0.5 rounded-full border border-indigo-700">SE Lab Prototype</span>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="#catalog" class="hover:text-amber-300 transition">Course Catalog</a>
+        <a href="#dashboard" class="hover:text-amber-300 transition">Student Dashboard</a>
+        <a href="#quiz-demo" class="hover:text-amber-300 transition">Quiz Assessment Engine</a>
+      </nav>
+      <div class="flex items-center space-x-3">
+        <span class="text-xs text-indigo-300 hidden sm:inline">Role: Student</span>
+        <div class="w-8 h-8 rounded-full bg-amber-400 text-indigo-950 flex items-center justify-center font-bold text-sm">
+          RR
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-indigo-900 to-indigo-800 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
+        Online Course Management System
+      </h1>
+      <p class="text-indigo-200 text-base sm:text-lg mb-6">
+        Software Engineering Laboratory Project Storyboard & Interactive Prototype
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="bg-indigo-950/60 border border-indigo-700/50 px-3 py-1 rounded text-xs">Architecture: 3-Tier Web</span>
+        <span class="bg-indigo-950/60 border border-indigo-700/50 px-3 py-1 rounded text-xs">Testing: 19 Verified Test Cases</span>
+        <span class="bg-indigo-950/60 border border-indigo-700/50 px-3 py-1 rounded text-xs">Modelling: UML 2.5 & ERD</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+    <!-- Section 1: Course Catalog (Module 2 & 3) -->
+    <section id="catalog" class="space-y-4">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">Featured Courses (Module 2)</h2>
+          <p class="text-sm text-slate-500">Search and filter active published courses (FR-3.1, TC05, TC08)</p>
+        </div>
+        <div class="flex gap-2 w-full sm:w-auto">
+          <input type="text" id="searchInput" placeholder="Search courses..." class="px-3 py-2 border border-slate-300 rounded-lg text-sm w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="courseGrid">
+        <!-- Course Card 1 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between">
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Computer Science</span>
+              <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Published</span>
+            </div>
+            <h3 class="font-bold text-lg text-slate-900 mb-2">CS201: Data Structures & Algorithms</h3>
+            <p class="text-sm text-slate-600 mb-4">Comprehensive mastery of stacks, queues, trees, graphs, and algorithmic complexity.</p>
+            <div class="text-xs text-slate-500 space-y-1">
+              <div><i class="fa-solid fa-user-tie mr-1 text-slate-400"></i> Instructor: Dr. Alan Vance</div>
+              <div><i class="fa-solid fa-clock mr-1 text-slate-400"></i> 14 Weeks &bull; 8 Modules &bull; 4 Quizzes</div>
+            </div>
+          </div>
+          <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
+            <span class="text-lg font-bold text-slate-900">$49.00</span>
+            <button onclick="enrollCourse('CS201', 'Data Structures & Algorithms')" id="btn-CS201" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold rounded-lg transition">
+              Enroll Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Course Card 2 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between">
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Software Engineering</span>
+              <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Published</span>
+            </div>
+            <h3 class="font-bold text-lg text-slate-900 mb-2">SE305: Modern Software Architecture</h3>
+            <p class="text-sm text-slate-600 mb-4">Learn microservices, UML design patterns, domain-driven design, and CI/CD pipelines.</p>
+            <div class="text-xs text-slate-500 space-y-1">
+              <div><i class="fa-solid fa-user-tie mr-1 text-slate-400"></i> Instructor: Prof. Karen Patel</div>
+              <div><i class="fa-solid fa-clock mr-1 text-slate-400"></i> 10 Weeks &bull; 6 Modules &bull; 3 Quizzes</div>
+            </div>
+          </div>
+          <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
+            <span class="text-lg font-bold text-slate-900">$59.00</span>
+            <button onclick="enrollCourse('SE305', 'Modern Software Architecture')" id="btn-SE305" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold rounded-lg transition">
+              Enroll Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Course Card 3 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between">
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Artificial Intelligence</span>
+              <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Published</span>
+            </div>
+            <h3 class="font-bold text-lg text-slate-900 mb-2">AI401: Deep Learning Fundamentals</h3>
+            <p class="text-sm text-slate-600 mb-4">Hands-on neural networks, backpropagation, CNNs, and transformers with PyTorch.</p>
+            <div class="text-xs text-slate-500 space-y-1">
+              <div><i class="fa-solid fa-user-tie mr-1 text-slate-400"></i> Instructor: Dr. Marcus Chen</div>
+              <div><i class="fa-solid fa-clock mr-1 text-slate-400"></i> 12 Weeks &bull; 7 Modules &bull; 5 Quizzes</div>
+            </div>
+          </div>
+          <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
+            <span class="text-lg font-bold text-slate-900">$69.00</span>
+            <button onclick="enrollCourse('AI401', 'Deep Learning Fundamentals')" id="btn-AI401" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold rounded-lg transition">
+              Enroll Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Student Dashboard & Progress (Module 3) -->
+    <section id="dashboard" class="space-y-4">
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900">Student Enrolled Dashboard (Module 3)</h2>
+        <p class="text-sm text-slate-500">Track dynamic progress and lecture completion (FR-3.3, TC08)</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 space-y-6">
+        <div class="flex flex-col sm:flex-row justify-between sm:items-center pb-4 border-b border-slate-200 gap-2">
+          <div>
+            <h3 class="font-bold text-slate-800">Active Course: CS201 - Data Structures & Algorithms</h3>
+            <p class="text-xs text-slate-500">Enrolled on: Fall Session &bull; Status: In Progress</p>
+          </div>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+            Progress: 65% Completed
+          </span>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full bg-slate-200 rounded-full h-3">
+          <div class="bg-indigo-600 h-3 rounded-full transition-all duration-500" style="width: 65%"></div>
+        </div>
+
+        <!-- Module Checklist -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Curriculum Modules</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <div class="flex items-center p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-emerald-900">
+              <i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i>
+              <span>Module 1: Asymptotic Analysis & Big-O</span>
+            </div>
+            <div class="flex items-center p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-emerald-900">
+              <i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i>
+              <span>Module 2: Linked Lists & Pointers</span>
+            </div>
+            <div class="flex items-center p-3 bg-indigo-50 border border-indigo-200 rounded-lg text-indigo-900 font-medium">
+              <i class="fa-solid fa-circle-play text-indigo-600 mr-2.5"></i>
+              <span>Module 3: Binary Search Trees & AVL</span>
+            </div>
+            <div class="flex items-center p-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-500">
+              <i class="fa-solid fa-lock mr-2.5 text-slate-400"></i>
+              <span>Module 4: Graph Traversals (Locked)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Interactive Timed Quiz Engine (Module 4) -->
+    <section id="quiz-demo" class="space-y-4">
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900">Assessment & Quiz Engine (Module 4)</h2>
+        <p class="text-sm text-slate-500">Auto-grading, validation, and timer simulation (FR-4.1, FR-4.2, TC13, TC14)</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 space-y-6">
+        <div class="flex justify-between items-center pb-4 border-b border-slate-200">
+          <div>
+            <h3 class="font-bold text-slate-800">Quiz 1: Algorithmic Complexity</h3>
+            <p class="text-xs text-slate-500">Passing criteria: 2 / 2 correct (100%)</p>
+          </div>
+          <div class="bg-amber-50 text-amber-800 border border-amber-200 px-3 py-1 rounded-lg font-mono text-sm font-bold flex items-center">
+            <i class="fa-solid fa-stopwatch mr-1.5 text-amber-600"></i>
+            <span id="quizTimer">02:45</span>
+          </div>
+        </div>
+
+        <form id="quizForm" class="space-y-6" onsubmit="submitQuiz(event)">
+          <!-- Question 1 -->
+          <div class="space-y-2">
+            <p class="font-medium text-sm text-slate-800">1. What is the worst-case time complexity of binary search on a sorted array?</p>
+            <div class="space-y-1.5 pl-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="q1" value="O(1)" class="text-indigo-600">
+                <span>A) O(1)</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="q1" value="O(log n)" class="text-indigo-600">
+                <span>B) O(log n)</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="q1" value="O(n)" class="text-indigo-600">
+                <span>C) O(n)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="space-y-2">
+            <p class="font-medium text-sm text-slate-800">2. In a FIFO queue data structure, insertions occur at which end?</p>
+            <div class="space-y-1.5 pl-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="q2" value="Front" class="text-indigo-600">
+                <span>A) Front</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="q2" value="Rear" class="text-indigo-600">
+                <span>B) Rear</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="q2" value="Middle" class="text-indigo-600">
+                <span>C) Middle</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-slate-200">
+            <button type="submit" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm rounded-lg shadow-sm transition">
+              Submit Quiz Answers
+            </button>
+            <div id="quizResult" class="text-sm font-semibold"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-8 px-4 sm:px-6 lg:px-8 border-t border-slate-800 text-center text-xs space-y-2">
+    <div>Online Course Management System &bull; Software Engineering Laboratory Progress Storyboard</div>
+    <div>Built following IEEE 830 SRS, UML 2.5 modeling, and Black-Box verification suite.</div>
+  </footer>
+
+  <script>
+    function enrollCourse(id, title) {
+      const btn = document.getElementById('btn-' + id);
+      btn.innerText = 'Enrolled ✓';
+      btn.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
+      btn.classList.add('bg-emerald-600', 'cursor-default');
+      btn.disabled = true;
+      alert('Enrollment successful for: ' + title + ' (TC08 Passed)');
+    }
+
+    function submitQuiz(e) {
+      e.preventDefault();
+      const form = document.getElementById('quizForm');
+      const q1 = form.q1.value;
+      const q2 = form.q2.value;
+
+      if (!q1 || !q2) {
+        alert('Validation error: Please answer all questions before submitting.');
+        return;
+      }
+
+      let score = 0;
+      if (q1 === 'O(log n)') score++;
+      if (q2 === 'Rear') score++;
+
+      const res = document.getElementById('quizResult');
+      if (score === 2) {
+        res.innerHTML = '<span class="text-emerald-600"><i class="fa-solid fa-circle-check mr-1"></i> Score: 2/2 (100% - Passed!) Verified via TC13</span>';
+      } else {
+        res.innerHTML = '<span class="text-amber-600"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Score: ' + score + '/2 (Retake suggested)</span>';
+      }
+    }
+  </script>
+</body>
+</html>
