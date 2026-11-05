@@ -2,7 +2,7 @@
 
 ## Online Course Management System
 
-This repository documents the planning, modelling, development progress, and challenges encountered while working on the **Online Course Management System (OCMS)** as part of the Software Engineering Laboratory.
+This repository documents the planning, modelling, development progress, and challenges encountered while working on the **Online Course Management System** as part of the Software Engineering Laboratory.
 
 ### Course Alignment
 
@@ -14,7 +14,7 @@ The storyboard is organized around the practical activities supported by the lab
 - Use Case Diagram
 - Data Flow Diagram (DFD)
 - Activity Diagram
-- Class & Object Diagram
+- Object Diagram
 - Sequence Diagram
 - Small web-based application prototype
 - Testing and documentation
@@ -23,28 +23,23 @@ The storyboard is organized around the practical activities supported by the lab
 
 Progress is tracked using a GitHub Projects Kanban board with three columns:
 
-- **To Do** – planned laboratory tasks
-- **In Progress** – currently active laboratory work
-- **Done** – completed and reviewed laboratory deliverables
+- **To Do** – planned work
+- **In Progress** – currently active work
+- **Done** – completed and reviewed work
 
 ## Repository Structure
 
 ```text
-requirements/   Requirements documentation and SRS
-diagrams/       System modelling diagrams (UML & ER)
-progress/       Progress tracker, lab session timeline, and problem log
-application/    Prototype planning, architecture, and implementation notes
-Test Cases.md   Comprehensive test case suite across modules
+requirements/   Requirements documentation
+diagrams/       System modelling diagrams
+progress/       Progress, timeline, and problem records
+application/    Prototype planning and implementation notes
 ```
 
 ## Project Objective
 
-To design, model, and prototype an end-to-end **Online Course Management System (OCMS)** that provides a streamlined digital learning platform:
-- **Students** can discover courses, enroll, access multimedia lesson materials, complete timed quizzes, submit assignments, and earn certificates.
-- **Instructors** can design course curricula, upload lectures and reading materials, set up assessments, and monitor student grading.
-- **Administrators** can oversee user management, approve newly submitted courses, monitor platform analytics, and manage system configurations.
+To design and prototype a system that helps course coordinators, instructors, and students manage courses, modules, enrollments, quizzes, assignments, and grades in an organized manner.
 
 ## Status
 
-The project is being developed incrementally following laboratory sessions. Completed activities are moved to the **Done** column once supported by appropriate modeling deliverables, test evidence, and documented solutions in the problem log.
-
+The project is being developed incrementally. Completed activities will be moved to the **Done** column only after they are actually completed and supported with suitable evidence.
